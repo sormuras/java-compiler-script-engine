@@ -5,12 +5,13 @@
 
     <groupId>de.sormuras</groupId>
     <artifactId>java-compiler-script-engine</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2-SNAPSHOT</version>
 
     <description>JSR 223 facade for javac, the foundation Java compiler</description>
     <url>https://github.com/sormuras/java-compiler-script-engine</url>
     <scm>
         <url>https://github.com/sormuras/java-compiler-script-engine.git</url>
+        <connection>scm:git:https://github.com/sormuras/java-compiler-script-engine.git</connection>
     </scm>
 
     <developers>
@@ -79,6 +80,10 @@
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-source-plugin</artifactId>
@@ -206,6 +211,16 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <!-- Release support -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
             </plugin>
 
         </plugins>

@@ -1,7 +1,16 @@
-.idea/
-.settings/
+# Maven
 target/
+pom.xml.next
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.tag
+release.properties
 
+# IDEA
+.idea/
+*.iml
+
+# Eclipse
+.settings/
 .classpath
 .project
-*.iml
