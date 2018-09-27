@@ -12,8 +12,8 @@
     <scm>
         <url>https://github.com/sormuras/java-compiler-script-engine.git</url>
         <connection>scm:git:https://github.com/sormuras/java-compiler-script-engine.git</connection>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <developers>
         <developer>
