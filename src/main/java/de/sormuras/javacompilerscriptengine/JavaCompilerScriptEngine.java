@@ -7,13 +7,15 @@ import javax.script.Compilable;
 import javax.script.CompiledScript;
 import javax.script.ScriptContext;
 import javax.script.ScriptEngine;
-import javax.script.ScriptEngineFactory;
 import javax.script.ScriptException;
 import javax.script.SimpleBindings;
 
 class JavaCompilerScriptEngine extends AbstractScriptEngine implements Compilable {
 
-  JavaCompilerScriptEngine() {
+  private final JavaCompilerScriptEngineFactory factory;
+
+  JavaCompilerScriptEngine(JavaCompilerScriptEngineFactory factory) {
+    this.factory = factory;
     context.setBindings(new SimpleBindings(), ScriptContext.GLOBAL_SCOPE);
     context.setBindings(new SimpleBindings(), ScriptContext.ENGINE_SCOPE);
   }
@@ -34,9 +36,8 @@ class JavaCompilerScriptEngine extends AbstractScriptEngine implements Compilabl
   }
 
   @Override
-  public ScriptEngineFactory getFactory() {
-    // TODO Create and register `JavaCompilerScriptEngineFactory`
-    throw new UnsupportedOperationException();
+  public JavaCompilerScriptEngineFactory getFactory() {
+    return factory;
   }
 
   @Override

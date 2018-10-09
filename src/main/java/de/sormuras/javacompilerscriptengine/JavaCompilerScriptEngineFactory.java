@@ -78,6 +78,6 @@ public class JavaCompilerScriptEngineFactory implements ScriptEngineFactory {
 
   @Override
   public ScriptEngine getScriptEngine() {
-    return new JavaCompilerScriptEngine();
+    return new JavaCompilerScriptEngine(this);
   }
 }
