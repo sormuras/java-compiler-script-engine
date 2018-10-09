@@ -1,6 +1,8 @@
 package de.sormuras.javacompilerscriptengine;
 
+import java.io.BufferedReader;
 import java.io.Reader;
+import java.util.stream.Collectors;
 import javax.script.AbstractScriptEngine;
 import javax.script.Bindings;
 import javax.script.Compilable;
@@ -26,8 +28,9 @@ class JavaCompilerScriptEngine extends AbstractScriptEngine implements Compilabl
   }
 
   @Override
-  public Object eval(Reader reader, ScriptContext context) {
-    throw new UnsupportedOperationException();
+  public Object eval(Reader reader, ScriptContext context) throws ScriptException {
+    String script = new BufferedReader(reader).lines().collect(Collectors.joining());
+    return eval(script, context);
   }
 
   @Override
@@ -77,7 +80,8 @@ class JavaCompilerScriptEngine extends AbstractScriptEngine implements Compilabl
   }
 
   @Override
-  public CompiledScript compile(Reader script) {
-    throw new UnsupportedOperationException();
+  public CompiledScript compile(Reader reader) throws ScriptException {
+    String script = new BufferedReader(reader).lines().collect(Collectors.joining());
+    return compile(script);
   }
 }
