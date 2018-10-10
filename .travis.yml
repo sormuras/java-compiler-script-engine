@@ -1,14 +1,12 @@
-sudo: false
-
 language: java
 jdk: openjdk11
-
-before_install:
-  - unset _JAVA_OPTIONS
 
 script:
   - mvn verify
   - tail -200 target/it/basic/build.log
+
+before_cache:
+  - mvn build-helper:remove-project-artifact
 
 cache:
   directories:
