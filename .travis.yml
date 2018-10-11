@@ -8,3 +8,7 @@ script:
   - ls -l "/c/Program Files"
   - ls -l "/c/Program Files (x86)"
   - ls -l "/c/tools"
+  - cinst jdk11 -params 'installdir=C:\\jdk11'
+  - export JAVA_HOME="C:\jdk11"
+  - export PATH=${JAVA_HOME}/bin:${PATH}
+  - java --version
