@@ -3,3 +3,5 @@ language: shell
 script:
   - ls -la
   - echo ${PATH}
+  - ls -l "/c/ProgramData"
+  - ls -l "/c/Program Files"
