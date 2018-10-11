@@ -1,17 +1,23 @@
-language: java
-jdk: openjdk11
-
-os:
-  - linux
-  - windows
-
-script:
-  - mvn verify
-  - tail -200 target/it/basic/build.log
-
 before_cache:
   - mvn build-helper:remove-project-artifact
 
 cache:
   directories:
     - $HOME/.m2
+
+jobs:
+  include:
+    - stage: Linux
+      os: linux
+      language: java
+      jdk: openjdk11
+      script:
+        - java --version
+        - mvn verify
+        - tail -200 target/it/basic/build.log
+
+    - stage: Windows
+      os: windows
+      script:
+        - ls -la
+        - java --version
