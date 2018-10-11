@@ -7,17 +7,17 @@ cache:
 
 jobs:
   include:
-    - stage: Linux
-      os: linux
-      language: java
-      jdk: openjdk11
-      script:
-        - java --version
-        - mvn verify
-        - tail -200 target/it/basic/build.log
-
+#    - stage: Linux
+#      os: linux
+#      language: java
+#      jdk: openjdk11
+#      script:
+#        - java --version
+#        - mvn verify
+#        - tail -200 target/it/basic/build.log
     - stage: Windows
       os: windows
+      language: shell
       script:
         - ls -la
         - java --version
