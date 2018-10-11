@@ -6,3 +6,5 @@ script:
   - ls -l "/c"
   - ls -l "/c/ProgramData"
   - ls -l "/c/Program Files"
+  - ls -l "/c/Program Files (x86)"
+  - ls -l "/c/tools"
