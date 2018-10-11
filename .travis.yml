@@ -1,6 +1,10 @@
 language: java
 jdk: openjdk11
 
+os:
+  - linux
+  - windows
+
 script:
   - mvn verify
   - tail -200 target/it/basic/build.log
