@@ -1,14 +1,13 @@
-os: windows
-language: shell
+language: java
+jdk: openjdk11
+
 script:
-  - ls -la
-  - echo ${PATH}
-  - ls -l "/c"
-  - ls -l "/c/ProgramData"
-  - ls -l "/c/Program Files"
-  - ls -l "/c/Program Files (x86)"
-  - ls -l "/c/tools"
-  - cinst jdk11 -params 'installdir=C:\\jdk11'
-  - export JAVA_HOME="C:\jdk11"
-  - export PATH=${JAVA_HOME}/bin:${PATH}
-  - java --version
+  - mvn verify
+  - tail -200 target/it/basic/build.log
+
+before_cache:
+  - mvn build-helper:remove-project-artifact
+
+cache:
+  directories:
+    - $HOME/.m2
