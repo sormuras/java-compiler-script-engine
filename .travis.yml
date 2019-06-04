@@ -2,11 +2,7 @@ language: java
 jdk: openjdk11
 
 script:
-  - mvn verify
-  - tail -200 target/it/basic/build.log
-
-before_cache:
-  - mvn build-helper:remove-project-artifact
+  - jshell https://bit.ly/make-java
 
 cache:
   directories:

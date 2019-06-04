@@ -50,7 +50,7 @@ public class JavaCompilerScriptEngineFactory implements ScriptEngineFactory {
       case ScriptEngine.ENGINE:
         return "Java Compiler Script Engine";
       case ScriptEngine.ENGINE_VERSION:
-        return "0.1-SNAPSHOT";
+        return "0.2.1-SNAPSHOT";
       case ScriptEngine.LANGUAGE:
         return "Java";
       case ScriptEngine.LANGUAGE_VERSION:
