@@ -13,9 +13,9 @@ class IntegrationTests {
     ScriptEngine engine = manager.getEngineByName("java");
     Assertions.assertNotNull(engine, "Engine not found?!");
     Assertions.assertEquals("World", engine.eval("return \"World\";"));
-    Assertions.assertEquals("0.2.1", engine.getFactory().getEngineVersion());
+    Assertions.assertEquals("0.2.2-SNAPSHOT", engine.getFactory().getEngineVersion());
     Assertions.assertEquals(
-        "de.sormuras.javacompilerscriptengine@0.2.1",
+        "de.sormuras.javacompilerscriptengine@0.2.2-SNAPSHOT",
         engine.getClass().getModule().getDescriptor().toNameAndVersion());
   }
 }
