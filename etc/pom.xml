@@ -4,7 +4,7 @@
 
     <groupId>de.sormuras</groupId>
     <artifactId>java-compiler-script-engine</artifactId>
-    <version>0.2.1-SNAPSHOT</version>
+    <version>0.2.1</version>
 
     <name>Java Compiler Script Engine</name>
     <description>JSR 223 facade for javac, the foundation Java compiler</description>
