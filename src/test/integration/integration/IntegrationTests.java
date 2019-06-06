@@ -1,13 +1,11 @@
 package integration;
 
 import java.util.Properties;
-import java.util.function.Predicate;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.api.extension.ExtensionContext;
 
 @ExtendWith(PropertiesResolver.class)
 class IntegrationTests {
@@ -24,7 +22,7 @@ class IntegrationTests {
   }
 
   @Test
-  @EnabledIf(ModuleIsNamed.class)
+  @EnabledIf("isNamedModule")
   void helloWorld() throws Exception {
     ScriptEngineManager manager = new ScriptEngineManager();
     ScriptEngine engine = manager.getEngineByName("java");
@@ -36,10 +34,7 @@ class IntegrationTests {
         engine.getClass().getModule().getDescriptor().toNameAndVersion());
   }
 
-  public static class ModuleIsNamed implements Predicate<ExtensionContext> {
-    @Override
-    public boolean test(ExtensionContext extensionContext) {
-      return extensionContext.getRequiredTestClass().getModule().isNamed();
-    }
+  boolean isNamedModule() {
+    return IntegrationTests.class.getModule().isNamed();
   }
 }
